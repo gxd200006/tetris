@@ -16,7 +16,7 @@ class App:
     def draw(self):
         # draw & display the background
         self.screen.fill(color=FIELD_COLOR)
-        pg.display.flip
+        pg.display.flip()
     
     def check_events(self):
         # check if user quits the game, and exit accordingly
@@ -26,7 +26,7 @@ class App:
                 sys.exit()
     
     def run(self):
-        # main game loop
+        # main game loop - calls the three methods defined above
         while True:
             self.check_events()
             self.update()
