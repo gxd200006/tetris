@@ -1,11 +1,7 @@
 from settings import *
 
-class Block:
-    pass
+class Block(pg.sprite.Sprite):
+    def __init__(self, tetromino, pos):
+        self.tetromino = tetromino
 
-class Tetromino:
-    def __init__(self, tetris):
-        self.tetris = tetris
-    
-    def update(self):
-        pass
+        super().__init__(tetromin
