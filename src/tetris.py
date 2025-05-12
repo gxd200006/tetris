@@ -7,7 +7,6 @@ class Tetris:
     def __init__(self, app):
         self.app = app
         self.sprite_group = pg.sprite.Group()
-        self.field_array = self.get_field_array
         self.field_array = self.get_field_array()
         self.tetromino = Tetromino(self)
         self.speed_up = False
