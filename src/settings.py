@@ -8,6 +8,8 @@ vec = pg.math.Vector2
 FPS = 60
 FIELD_COLOR = (24, 45, 84)
 
+ANIM_TIME_INTERVAL = 150 # time in milliseconds
+
 TILE_SIZE = 30
 FIELD_SIZE = FIELD_W, FIELD_H = 10, 20
 FIELD_RES = FIELD_W * TILE_SIZE, FIELD_H * TILE_SIZE

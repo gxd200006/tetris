@@ -9,7 +9,7 @@ class Block(pg.sprite.Sprite):
         super().__init__(tetromino.tetris.sprite_group)
         self.image = pg.Surface([TILE_SIZE, TILE_SIZE])
         self.image.fill('orange')
-
+    
         self.rect = self.image.get_rect()
     
     def set_rect_pos(self):
@@ -31,4 +31,3 @@ class Tetromino:
     
     def update(self):
         self.move(direction='down')
-        pg.time.wait(200)
