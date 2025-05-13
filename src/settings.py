@@ -7,6 +7,7 @@ vec = pg.math.Vector2
 
 FPS = 60
 FIELD_COLOR = (24, 45, 84)
+BG_COLOR = (24, 24, 24)
 
 # SPRITE_DIR_PATH = 'src/sprites'
 
@@ -16,6 +17,9 @@ FAST_ANIM_TIME_INTERVAL = 15
 TILE_SIZE = 30
 FIELD_SIZE = FIELD_W, FIELD_H = 10, 20
 FIELD_RES = FIELD_W * TILE_SIZE, FIELD_H * TILE_SIZE
+
+FIELD_SCALE_W, FIELD_SCALE_H = 1.7, 1.0
+WIN_RES = WIN_W, WIN_H = FIELD_RES[0] * FIELD_SCALE_W, FIELD_RES[1] * FIELD_SCALE_H
 
 INIT_POS_OFFSET = vec(FIELD_W // 2 - 1, 0)
 MOVE_DIRECTIONS = {'left': vec(-1, 0), 'right': vec(1, 0), 'down': vec(0, 1)}

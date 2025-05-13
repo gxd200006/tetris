@@ -8,7 +8,7 @@ class App:
         # initialize the window and set a clock in order to update the game
         pg.init()
         pg.display.set_caption("Tetris")
-        self.screen = pg.display.set_mode(FIELD_RES)
+        self.screen = pg.display.set_mode(WIN_RES)
         self.clock = pg.time.Clock()
         self.set_timer()
         # self.images = self.load_images()
@@ -35,7 +35,8 @@ class App:
     
     def draw(self):
         # draw & display the background
-        self.screen.fill(color=FIELD_COLOR)
+        self.screen.fill(color=BG_COLOR)
+        self.screen.fill(color=FIELD_COLOR, rect=(0, 0, *FIELD_RES))
         self.tetris.draw()
         pg.display.flip()
     
