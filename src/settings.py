@@ -6,8 +6,8 @@ import pygame as pg
 vec = pg.math.Vector2
 
 FPS = 60
-FIELD_COLOR = (50, 50, 50)
-BG_COLOR = (24, 24, 24)
+FIELD_COLOR = (25, 25, 25)
+BG_COLOR = (50, 50, 50)
 
 SPRITE_DIR_PATH = 'sprites'
 FONT_PATH = 'font/mini_pixel-7.ttf'
