@@ -6,10 +6,11 @@ import pygame as pg
 vec = pg.math.Vector2
 
 FPS = 60
-FIELD_COLOR = (24, 45, 84)
+FIELD_COLOR = (150, 150, 150)
 BG_COLOR = (24, 24, 24)
 
-# SPRITE_DIR_PATH = 'src/sprites'
+SPRITE_DIR_PATH = 'sprites'
+FONT_PATH = 'font/mini_pixel-7.ttf'
 
 ANIM_TIME_INTERVAL = 150 # time in milliseconds
 FAST_ANIM_TIME_INTERVAL = 15

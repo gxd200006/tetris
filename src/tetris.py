@@ -1,6 +1,17 @@
 from settings import *
 import math
 from tetromino import Tetromino
+import pygame.freetype as ft
+
+class Text:
+    def __init__(self, app):
+        self.app = app
+        self.font = ft.Font(FONT_PATH)
+    
+    def draw(self):
+        self.font.render_to(self.app.screen, (WIN_W * 0.595, WIN_H * 0.02),
+                            text='TETRIS', fgcolor='white',
+                            size=TILE_SIZE * 1.65, bgcolor='black')
 
 class Tetris:
     # input of constructor is application instance
@@ -33,9 +44,6 @@ class Tetris:
             x, y = int(block.pos.x), int(block.pos.y)
             self.field_array[y][x] = block
     
-    def get_field_array(self):
-        return [[0 for x in range(FIELD_W)] for y in range(FIELD_H)]
-    
     def put_tetromino_blocks_in_array(self):
         for block in self.tetromino.blocks:
             x, y = int(block.pos.x), int(block.pos.y)
@@ -44,13 +52,21 @@ class Tetris:
     def get_field_array(self):
         return [[0 for x in range(FIELD_W)] for y in range(FIELD_H)]
     
+    def is_game_over(self):
+        if self.tetromino.blocks[0].pos.y == INIT_POS_OFFSET[1]:
+            pg.time.wait(300)
+            return True
+    
     def check_tetromino_landing(self):
         if self.tetromino.landing:
-            self.speed_up = False
-            self.put_tetromino_blocks_in_array()
-            self.next_tetromino.current = True
-            self.tetromino = self.next_tetromino
-            self.next_tetromino = Tetromino(self, current=False)
+            if self.is_game_over():
+                self.__init__(self.app)
+            else:
+                self.speed_up = False
+                self.put_tetromino_blocks_in_array()
+                self.next_tetromino.current = True
+                self.tetromino = self.next_tetromino
+                self.next_tetromino = Tetromino(self, current=False)
     
     def control(self, pressed_key):
         if pressed_key == pg.K_LEFT:
@@ -65,7 +81,7 @@ class Tetris:
     def draw_grid(self):
         for x in range (FIELD_W):
             for y in range (FIELD_H):
-                pg.draw.rect(self.app.screen, (63, 152, 217),
+                pg.draw.rect(self.app.screen, 'black',
                              (x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
     
     def update(self):
