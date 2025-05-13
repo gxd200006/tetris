@@ -12,7 +12,7 @@ BG_COLOR = (50, 50, 50)
 SPRITE_DIR_PATH = 'sprites'
 FONT_PATH = 'font/mini_pixel-7.ttf'
 
-ANIM_TIME_INTERVAL = 150 # time in milliseconds
+ANIM_TIME_INTERVAL = 200 # time in milliseconds
 FAST_ANIM_TIME_INTERVAL = 15
 
 TILE_SIZE = 30
