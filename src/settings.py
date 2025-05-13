@@ -8,7 +8,7 @@ vec = pg.math.Vector2
 FPS = 60
 FIELD_COLOR = (24, 45, 84)
 
-SPRITE_DIR_PATH = 'src/sprites'
+# SPRITE_DIR_PATH = 'src/sprites'
 
 ANIM_TIME_INTERVAL = 150 # time in milliseconds
 FAST_ANIM_TIME_INTERVAL = 15
